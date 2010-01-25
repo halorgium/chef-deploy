@@ -34,9 +34,9 @@ class Git
     execute = ["rm -rf #{destination}"]
 
     if args.empty?
-      execute << "#{git} clone #{verbose} #{configuration[:repository]} #{destination}"
+      execute << "#{git} clone #{verbose} '#{configuration[:repository]}' #{destination}"
     else
-      execute << "#{git} clone #{verbose} #{args.join(' ')} #{configuration[:repository]} #{destination}"
+      execute << "#{git} clone #{verbose} #{args.join(' ')} '#{configuration[:repository]}' #{destination}"
     end
 
     # checkout into a local branch rather than a detached HEAD
